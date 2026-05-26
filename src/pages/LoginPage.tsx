@@ -17,6 +17,7 @@ export function LoginPage() {
   const [showPassword, setShowPassword] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  console.log(import.meta.env.VITE_API_PROXY_TARGET?.trim())
 
   useEffect(() => {
     document.title = t("login.documentTitle");
