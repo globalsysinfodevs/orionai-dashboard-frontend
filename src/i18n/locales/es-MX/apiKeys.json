@@ -1,0 +1,37 @@
+{
+  "eyebrow": "Credenciales",
+  "title": "Claves API",
+  "description": "Administra las claves que tus agentes de sincronización usan para autenticarse en la API de ingesta.",
+  "generate": "Generar clave",
+  "onlySuperusersCreate": "Solo los superusuarios pueden crear claves API.",
+  "securityNotice": "Los valores de la clave completa solo se muestran una vez al generarla. Guárdalos de forma segura en el gestor de secretos de tu despliegue.",
+  "keys": "Claves",
+  "keysFor": "Claves de {{name}}",
+  "cardDescription": "Cada cliente mantiene un conjunto independiente de credenciales.",
+  "selectTenant": {
+    "title": "Selecciona un cliente",
+    "description": "Elige un cliente en el selector para administrar sus claves API."
+  },
+  "emptyTitle": "Aún no hay claves API",
+  "emptyDescription": "Genera la primera credencial para comenzar la ingesta de telemetría.",
+  "revokeConfirm": "¿Revocar la clave API \"{{label}}\"? Esta acción no se puede deshacer.",
+  "toast": {
+    "revoked": "Clave API revocada"
+  },
+  "modal": {
+    "generateTitle": "Generar clave API",
+    "createdTitle": "Clave API creada",
+    "generateDescription": "Emite una nueva credencial para el agente de sincronización de este cliente.",
+    "createdDescription": "Copia y guarda esta clave ahora; no se volverá a mostrar.",
+    "savedKey": "Ya guardé mi clave",
+    "labelPlaceholder": "p. ej. production-sync-agent",
+    "labelHelper": "Un nombre breve y reconocible para esta clave.",
+    "expiresLabel": "Vence el (opcional)",
+    "expiresHelper": "Déjalo en blanco para una clave sin vencimiento.",
+    "oneTimeTitle": "Visualización única",
+    "oneTimeBody": "Por seguridad, esta clave completa no se volverá a mostrar. Guárdala ahora en tu gestor de secretos.",
+    "yourNewKey": "Tu nueva clave API",
+    "keyCopied": "Clave copiada al portapapeles",
+    "copyFailed": "No se pudo copiar automáticamente; cópiala manualmente."
+  }
+}

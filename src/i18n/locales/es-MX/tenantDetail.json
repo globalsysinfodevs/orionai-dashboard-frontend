@@ -1,0 +1,40 @@
+{
+  "eyebrow": "Cliente",
+  "noDescription": "No se proporcionó descripción.",
+  "enable": "Habilitar",
+  "disable": "Deshabilitar",
+  "notFound": {
+    "title": "Cliente no encontrado",
+    "description": "Es posible que este cliente se haya eliminado o que no tengas acceso.",
+    "back": "Regresar a clientes"
+  },
+  "tile": {
+    "contact": "Contacto",
+    "totalUsers": "Usuarios totales",
+    "syncHealth": "Estado de sincronización"
+  },
+  "tabs": {
+    "overview": "Resumen",
+    "apiKeys": "Claves API"
+  },
+  "identity": {
+    "title": "Identidad del cliente",
+    "description": "Los identificadores únicos que utilizan tus agentes de sincronización.",
+    "tenantId": "ID de cliente",
+    "lastUpdated": "Última actualización",
+    "lastSync": "Última sincronización"
+  },
+  "keys": {
+    "title": "Claves API",
+    "description": "Credenciales que utilizan los agentes de sincronización de este cliente para autenticarse.",
+    "generate": "Generar clave",
+    "onlySuperusersCreate": "Solo los superusuarios pueden crear claves API.",
+    "emptyTitle": "Aún no hay claves API",
+    "emptyDescription": "Genera la primera credencial para permitir que el agente de sincronización de este cliente se autentique.",
+    "revokeConfirm": "¿Revocar la clave API \"{{label}}\"? Esta acción no se puede deshacer."
+  },
+  "toast": {
+    "tenantUpdated": "Cliente actualizado",
+    "keyRevoked": "Clave API revocada"
+  }
+}

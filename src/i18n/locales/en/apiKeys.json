@@ -1,0 +1,37 @@
+{
+  "eyebrow": "Credentials",
+  "title": "API keys",
+  "description": "Manage the keys your sync agents use to authenticate against the ingestion API.",
+  "generate": "Generate key",
+  "onlySuperusersCreate": "Only superusers can create API keys.",
+  "securityNotice": "Raw key values are only shown once at generation time. Store them securely in your deployment's secret manager.",
+  "keys": "Keys",
+  "keysFor": "Keys for {{name}}",
+  "cardDescription": "Each tenant maintains an independent set of credentials.",
+  "selectTenant": {
+    "title": "Select a tenant",
+    "description": "Choose a tenant from the switcher to manage its API keys."
+  },
+  "emptyTitle": "No API keys yet",
+  "emptyDescription": "Generate the first credential to start ingesting telemetry.",
+  "revokeConfirm": "Revoke API key \"{{label}}\"? This action cannot be undone.",
+  "toast": {
+    "revoked": "API key revoked"
+  },
+  "modal": {
+    "generateTitle": "Generate API key",
+    "createdTitle": "API key created",
+    "generateDescription": "Issue a new credential for this tenant's sync agent.",
+    "createdDescription": "Copy and store this key now — it will not be shown again.",
+    "savedKey": "I've saved my key",
+    "labelPlaceholder": "e.g. production-sync-agent",
+    "labelHelper": "A short, recognizable name for this key.",
+    "expiresLabel": "Expires at (optional)",
+    "expiresHelper": "Leave blank for a non-expiring key.",
+    "oneTimeTitle": "One-time display",
+    "oneTimeBody": "For security, this raw key will never be shown again. Save it now in your secret manager.",
+    "yourNewKey": "Your new API key",
+    "keyCopied": "Key copied to clipboard",
+    "copyFailed": "Could not copy automatically — please copy manually."
+  }
+}

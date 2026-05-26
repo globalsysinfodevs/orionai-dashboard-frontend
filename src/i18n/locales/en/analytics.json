@@ -1,0 +1,58 @@
+{
+  "eyebrow": "Analytics",
+  "title": "Usage analytics",
+  "description": "Daily aggregates and sync pipeline performance for the active tenant.",
+  "summary": {
+    "messages": "Messages",
+    "tokens": "Tokens",
+    "documentsUploaded": "Documents uploaded",
+    "peakActiveUsers": "Peak active users",
+    "avgResponseTime": "Avg response time"
+  },
+  "series": {
+    "user": "User",
+    "assistant": "Assistant",
+    "tokens": "Tokens",
+    "totalRuns": "Total runs",
+    "failed": "Failed"
+  },
+  "messagesChart": {
+    "title": "Messages over time",
+    "description": "Daily user vs. assistant message volume.",
+    "empty": {
+      "title": "No messages recorded yet",
+      "description": "Once messages are ingested, this chart will display the breakdown."
+    }
+  },
+  "tokensChart": {
+    "title": "Token consumption",
+    "description": "Daily compute footprint.",
+    "empty": {
+      "title": "No token data",
+      "description": "Token totals will appear after the first ingest."
+    }
+  },
+  "syncChart": {
+    "title": "Sync pipeline performance",
+    "description": "Successful vs. failed sync runs by day.",
+    "empty": {
+      "title": "No sync runs yet",
+      "description": "Pipeline statistics will appear once syncs run."
+    }
+  },
+  "recentRuns": {
+    "title": "Recent sync runs",
+    "description": "The latest ingestion batches and their outcomes.",
+    "empty": {
+      "title": "No recent runs",
+      "description": "Sync run history will appear here as batches arrive."
+    },
+    "columns": {
+      "syncRun": "Sync run",
+      "started": "Started",
+      "completed": "Completed",
+      "batches": "Batches",
+      "records": "Records"
+    }
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "eyebrow": "Workspaces",
+  "title": "Tenants",
+  "description": "Manage the client organizations connected to your OrionAI platform.",
+  "newTenant": "New tenant",
+  "onlySuperusersCreate": "Only superusers can create tenants.",
+  "registeredTenants": "Registered tenants",
+  "totalCount_one": "{{count}} total",
+  "totalCount_other": "{{count}} total",
+  "searchPlaceholder": "Search tenants…",
+  "noContactEmail": "No contact email",
+  "createdOn": "Created {{date}}",
+  "openDashboard": "Open dashboard",
+  "empty": {
+    "title": "No tenants yet",
+    "description": "Create your first tenant to start ingesting telemetry.",
+    "searchTitle": "No matching tenants",
+    "searchDescription": "Try a different name, slug, or email."
+  },
+  "metric": {
+    "users": "Users",
+    "messages": "Messages",
+    "lastSync": "Last sync"
+  },
+  "form": {
+    "createTitle": "Create new tenant",
+    "editTitle": "Edit tenant",
+    "createDescription": "Register a new client organization to begin ingesting telemetry.",
+    "editDescription": "Update the metadata for this tenant.",
+    "createSubmit": "Create tenant",
+    "nameLabel": "Tenant name",
+    "namePlaceholder": "Acme Corporation",
+    "slugPlaceholder": "acme-corp",
+    "slugHelper": "Lowercase letters, numbers, and dashes.",
+    "slugLockedHelper": "Slug cannot be changed after creation.",
+    "emailPlaceholder": "ops@acme.com",
+    "descriptionPlaceholder": "Short note about this tenant (optional)."
+  },
+  "validation": {
+    "nameRequired": "Tenant name is required.",
+    "slugRequired": "Slug is required.",
+    "slugFormat": "Use lowercase letters, numbers, and dashes only.",
+    "emailInvalid": "Enter a valid email address."
+  },
+  "toast": {
+    "created": "Tenant created",
+    "updated": "Tenant updated"
+  }
+}

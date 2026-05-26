@@ -1,0 +1,23 @@
+{
+  "eyebrow": "Activity",
+  "title": "Event stream",
+  "description": "A real-time log of telemetry events received from this tenant's deployment.",
+  "recentEvents": {
+    "title": "Recent events"
+  },
+  "eventsShown_one": "{{count}} event shown",
+  "eventsShown_other": "{{count}} events shown",
+  "filterPlaceholder": "Filter events…",
+  "limitOption_one": "{{count}} event",
+  "limitOption_other": "{{count}} events",
+  "empty": {
+    "filtered": {
+      "title": "No events match your filter",
+      "description": "Try a different keyword or clear the filter."
+    },
+    "none": {
+      "title": "No activity yet",
+      "description": "Events from this tenant's sync agents will appear here as they arrive."
+    }
+  }
+}

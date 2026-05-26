@@ -1,0 +1,80 @@
+{
+  "eyebrow": "Resumen",
+  "welcome": {
+    "title": "Te damos la bienvenida a OrionAI",
+    "description": "Comienza incorporando tu primer cliente."
+  },
+  "noTenants": {
+    "title": "Aún no hay clientes registrados",
+    "description": "Crea tu primer cliente para comenzar a recibir telemetría.",
+    "createTenant": "Crear cliente"
+  },
+  "console": "Panel de {{name}}",
+  "tenantOverview": "Resumen del cliente",
+  "snapshotDescription": "Una vista en vivo del uso, el estado de sincronización y la actividad de la plataforma para el cliente seleccionado.",
+  "kpi": {
+    "activeUsers": {
+      "label": "Usuarios activos",
+      "helper_one": "{{total}} en total",
+      "helper_other": "{{total}} en total"
+    },
+    "messages": {
+      "label": "Mensajes",
+      "helper": "Intercambios totales"
+    },
+    "documents": {
+      "label": "Documentos",
+      "helper_one": "{{total}} chatbot",
+      "helper_other": "{{total}} chatbots"
+    },
+    "tokens": {
+      "label": "Tokens consumidos",
+      "helper": "En todas las conversaciones"
+    }
+  },
+  "activityTrend": {
+    "title": "Tendencia de actividad",
+    "description": "Mensajes y usuarios activos en los últimos 14 días.",
+    "explore": "Explorar analíticas",
+    "empty": {
+      "title": "Aún no hay datos de uso",
+      "description": "En cuanto comiencen a llegar los lotes de telemetría, verás aquí las tendencias diarias."
+    }
+  },
+  "series": {
+    "messages": "Mensajes",
+    "activeUsers": "Usuarios activos"
+  },
+  "syncHealth": {
+    "title": "Estado de sincronización",
+    "description": "Estado de la canalización de telemetría.",
+    "totalRuns": "Ejecuciones totales",
+    "successRate": "Tasa de éxito",
+    "successful": "Exitosas",
+    "failed": "Fallidas",
+    "lastSync": "Última sincronización",
+    "viewPipeline": "Ver detalles de la canalización"
+  },
+  "recentActivity": {
+    "title": "Actividad reciente",
+    "description": "Últimos eventos recibidos del agente de sincronización de este cliente.",
+    "batch": "lote",
+    "empty": {
+      "title": "Aún no hay actividad",
+      "description": "Los eventos de ingesta recientes aparecerán aquí a medida que los agentes de sincronización reporten."
+    }
+  },
+  "syncStatus": {
+    "completed": "Completada",
+    "failed": "Fallida",
+    "processing": "Procesando",
+    "running": "En ejecución",
+    "pending": "Pendiente",
+    "partial": "Parcial",
+    "never": "Nunca",
+    "ok": "OK",
+    "success": "Exitosa",
+    "error": "Error",
+    "unknown": "Desconocido"
+  }
+}

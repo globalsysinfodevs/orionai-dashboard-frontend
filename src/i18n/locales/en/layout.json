@@ -1,0 +1,40 @@
+{
+  "nav": {
+    "overview": "Overview",
+    "analytics": "Analytics",
+    "activity": "Activity",
+    "tenants": "Tenants",
+    "apiKeys": "API Keys",
+    "settings": "Settings"
+  },
+  "sidebar": {
+    "console": "Analytics Console",
+    "activeTenant": "Active tenant",
+    "helpTitle": "Need help?",
+    "helpBody": "Check the API docs for ingestion or contact your account team.",
+    "helpLink": "Open API reference →"
+  },
+  "topbar": {
+    "openNav": "Open navigation",
+    "toggleTheme": "Toggle theme",
+    "switchToLight": "Switch to light mode",
+    "switchToDark": "Switch to dark mode",
+    "admin": "Admin",
+    "adminUser": "Admin user",
+    "adminShort": "Admin",
+    "administrator": "Administrator",
+    "superuser": "Superuser",
+    "accountSettings": "Account settings",
+    "signOut": "Sign out"
+  },
+  "tenantSwitcher": {
+    "noTenants": "No tenants",
+    "selectTenant": "Select a tenant",
+    "searchPlaceholder": "Search tenants…",
+    "noMatch": "No tenants match “{{query}}”.",
+    "inactive": "Inactive"
+  },
+  "language": {
+    "label": "Language"
+  }
+}

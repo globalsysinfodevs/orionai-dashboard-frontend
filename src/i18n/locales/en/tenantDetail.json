@@ -1,0 +1,40 @@
+{
+  "eyebrow": "Tenant",
+  "noDescription": "No description provided.",
+  "enable": "Enable",
+  "disable": "Disable",
+  "notFound": {
+    "title": "Tenant not found",
+    "description": "This tenant may have been removed or you don't have access.",
+    "back": "Back to tenants"
+  },
+  "tile": {
+    "contact": "Contact",
+    "totalUsers": "Total users",
+    "syncHealth": "Sync health"
+  },
+  "tabs": {
+    "overview": "Overview",
+    "apiKeys": "API Keys"
+  },
+  "identity": {
+    "title": "Tenant identity",
+    "description": "The unique identifiers your sync agents reference.",
+    "tenantId": "Tenant ID",
+    "lastUpdated": "Last updated",
+    "lastSync": "Last sync"
+  },
+  "keys": {
+    "title": "API keys",
+    "description": "Credentials used by this tenant's sync agents to authenticate.",
+    "generate": "Generate key",
+    "onlySuperusersCreate": "Only superusers can create API keys.",
+    "emptyTitle": "No API keys yet",
+    "emptyDescription": "Generate the first credential to allow this tenant's sync agent to authenticate.",
+    "revokeConfirm": "Revoke API key \"{{label}}\"? This cannot be undone."
+  },
+  "toast": {
+    "tenantUpdated": "Tenant updated",
+    "keyRevoked": "API key revoked"
+  }
+}

@@ -1,0 +1,127 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light dark;
+  --bg-app: #f7f8fa;
+  --bg-panel: #ffffff;
+  --border: rgba(17, 21, 31, 0.08);
+}
+
+.dark {
+  --bg-app: #080b13;
+  --bg-panel: #11151f;
+  --border: rgba(255, 255, 255, 0.06);
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  font-feature-settings: "cv11", "ss01", "ss03";
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* ---- Custom scrollbars ---- */
+*::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+*::-webkit-scrollbar-thumb {
+  background: rgba(120, 130, 150, 0.25);
+  border-radius: 999px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+*::-webkit-scrollbar-thumb:hover {
+  background: rgba(120, 130, 150, 0.4);
+  background-clip: padding-box;
+  border: 2px solid transparent;
+}
+
+@layer components {
+  .card {
+    @apply rounded-2xl border border-ink-100 bg-white shadow-card transition-colors dark:border-ink-800/80 dark:bg-ink-900;
+  }
+  .card-padded {
+    @apply card p-6;
+  }
+  .input-base {
+    @apply w-full rounded-lg border border-ink-200 bg-white px-3.5 py-2.5 text-sm text-ink-900 placeholder:text-ink-400 shadow-sm transition-shadow focus:border-brand-500 focus:outline-none focus:ring-4 focus:ring-brand-500/10 disabled:cursor-not-allowed disabled:opacity-60 dark:border-ink-700 dark:bg-ink-900 dark:text-ink-50 dark:placeholder:text-ink-500 dark:focus:border-brand-400;
+  }
+  .label-base {
+    @apply mb-1.5 block text-sm font-medium text-ink-700 dark:text-ink-200;
+  }
+  .helper-text {
+    @apply mt-1.5 text-xs text-ink-500 dark:text-ink-400;
+  }
+  .table-base {
+    @apply w-full text-left text-sm;
+  }
+  .table-base thead th {
+    @apply sticky top-0 bg-ink-50/95 px-5 py-3 text-xs font-semibold uppercase tracking-wide text-ink-500 backdrop-blur dark:bg-ink-900/95 dark:text-ink-400;
+  }
+  .table-base tbody td {
+    @apply border-t border-ink-100 px-5 py-3.5 text-ink-700 dark:border-ink-800/70 dark:text-ink-200;
+  }
+  .table-base tbody tr {
+    @apply transition-colors hover:bg-ink-50/70 dark:hover:bg-ink-800/40;
+  }
+  .focus-ring {
+    @apply focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-brand-500/20;
+  }
+}
+
+@layer utilities {
+  .bg-app {
+    background-color: var(--bg-app);
+  }
+  .bg-panel {
+    background-color: var(--bg-panel);
+  }
+  .text-gradient-brand {
+    background: linear-gradient(135deg, #598dff 0%, #1f47e6 60%, #162b73 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .mesh-bg {
+    background-image:
+      radial-gradient(at 12% 18%, rgba(51, 102, 255, 0.22) 0px, transparent 45%),
+      radial-gradient(at 88% 0%, rgba(120, 80, 220, 0.18) 0px, transparent 50%),
+      radial-gradient(at 70% 90%, rgba(34, 197, 200, 0.15) 0px, transparent 55%);
+  }
+  .shimmer-bg {
+    position: relative;
+    overflow: hidden;
+  }
+  .shimmer-bg::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    transform: translateX(-100%);
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.5),
+      transparent
+    );
+    animation: shimmer 1.6s infinite;
+  }
+  .dark .shimmer-bg::after {
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.06),
+      transparent
+    );
+  }
+}

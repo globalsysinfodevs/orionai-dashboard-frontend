@@ -1,0 +1,23 @@
+{
+  "eyebrow": "Actividad",
+  "title": "Flujo de eventos",
+  "description": "Un registro en tiempo real de los eventos de telemetría recibidos del despliegue de este cliente.",
+  "recentEvents": {
+    "title": "Eventos recientes"
+  },
+  "eventsShown_one": "{{count}} evento mostrado",
+  "eventsShown_other": "{{count}} eventos mostrados",
+  "filterPlaceholder": "Filtrar eventos…",
+  "limitOption_one": "{{count}} evento",
+  "limitOption_other": "{{count}} eventos",
+  "empty": {
+    "filtered": {
+      "title": "Ningún evento coincide con tu filtro",
+      "description": "Prueba con otra palabra clave o limpia el filtro."
+    },
+    "none": {
+      "title": "Aún no hay actividad",
+      "description": "Los eventos de los agentes de sincronización de este cliente aparecerán aquí a medida que lleguen."
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "eyebrow": "Settings",
+  "title": "Account & preferences",
+  "description": "Your profile, console preferences, and platform status.",
+  "profile": {
+    "title": "Profile",
+    "description": "Your administrator identity within OrionAI.",
+    "superuser": "Superuser",
+    "administrator": "Administrator",
+    "memberSince": "Member since",
+    "lastSignIn": "Last sign-in"
+  },
+  "appearance": {
+    "title": "Appearance",
+    "description": "Choose the visual theme that suits you.",
+    "light": "Light",
+    "dark": "Dark"
+  },
+  "status": {
+    "title": "Platform status",
+    "description": "Live health of the OrionAI backend.",
+    "operational": "All systems operational",
+    "issue": "Service issue",
+    "unreachable": "Unable to reach the OrionAI backend right now.",
+    "version": "Version",
+    "environment": "Environment",
+    "uptime": "Uptime"
+  }
+}

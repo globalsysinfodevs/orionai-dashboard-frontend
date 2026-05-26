@@ -1,0 +1,49 @@
+{
+  "eyebrow": "Espacios de trabajo",
+  "title": "Clientes",
+  "description": "Administra las organizaciones cliente conectadas a tu plataforma OrionAI.",
+  "newTenant": "Nuevo cliente",
+  "onlySuperusersCreate": "Solo los superusuarios pueden crear clientes.",
+  "registeredTenants": "Clientes registrados",
+  "totalCount_one": "{{count}} en total",
+  "totalCount_other": "{{count}} en total",
+  "searchPlaceholder": "Buscar clientes…",
+  "noContactEmail": "Sin correo de contacto",
+  "createdOn": "Creado {{date}}",
+  "openDashboard": "Abrir panel",
+  "empty": {
+    "title": "Aún no hay clientes",
+    "description": "Crea tu primer cliente para comenzar la ingesta de telemetría.",
+    "searchTitle": "No hay clientes que coincidan",
+    "searchDescription": "Prueba con otro nombre, slug o correo."
+  },
+  "metric": {
+    "users": "Usuarios",
+    "messages": "Mensajes",
+    "lastSync": "Última sincronización"
+  },
+  "form": {
+    "createTitle": "Crear nuevo cliente",
+    "editTitle": "Editar cliente",
+    "createDescription": "Registra una nueva organización cliente para comenzar la ingesta de telemetría.",
+    "editDescription": "Actualiza los metadatos de este cliente.",
+    "createSubmit": "Crear cliente",
+    "nameLabel": "Nombre del cliente",
+    "namePlaceholder": "Acme Corporation",
+    "slugPlaceholder": "acme-corp",
+    "slugHelper": "Letras minúsculas, números y guiones.",
+    "slugLockedHelper": "El slug no se puede cambiar después de la creación.",
+    "emailPlaceholder": "ops@acme.com",
+    "descriptionPlaceholder": "Nota breve sobre este cliente (opcional)."
+  },
+  "validation": {
+    "nameRequired": "El nombre del cliente es obligatorio.",
+    "slugRequired": "El slug es obligatorio.",
+    "slugFormat": "Usa solo letras minúsculas, números y guiones.",
+    "emailInvalid": "Ingresa una dirección de correo válida."
+  },
+  "toast": {
+    "created": "Cliente creado",
+    "updated": "Cliente actualizado"
+  }
+}

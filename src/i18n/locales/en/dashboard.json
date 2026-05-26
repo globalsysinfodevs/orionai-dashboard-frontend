@@ -1,0 +1,80 @@
+{
+  "eyebrow": "Overview",
+  "welcome": {
+    "title": "Welcome to OrionAI",
+    "description": "Get started by onboarding your first client tenant."
+  },
+  "noTenants": {
+    "title": "No tenants registered yet",
+    "description": "Create your first tenant to begin ingesting telemetry.",
+    "createTenant": "Create tenant"
+  },
+  "console": "{{name}}'s console",
+  "tenantOverview": "Tenant overview",
+  "snapshotDescription": "A live snapshot of usage, sync health, and platform activity for the selected tenant.",
+  "kpi": {
+    "activeUsers": {
+      "label": "Active users",
+      "helper_one": "{{total}} total",
+      "helper_other": "{{total}} total"
+    },
+    "messages": {
+      "label": "Messages",
+      "helper": "Lifetime exchanges"
+    },
+    "documents": {
+      "label": "Documents",
+      "helper_one": "{{total}} chatbot",
+      "helper_other": "{{total}} chatbots"
+    },
+    "tokens": {
+      "label": "Tokens consumed",
+      "helper": "Across all conversations"
+    }
+  },
+  "activityTrend": {
+    "title": "Activity trend",
+    "description": "Messages and active users over the past 14 days.",
+    "explore": "Explore analytics",
+    "empty": {
+      "title": "No usage data yet",
+      "description": "Once telemetry batches start arriving, you'll see daily trends here."
+    }
+  },
+  "series": {
+    "messages": "Messages",
+    "activeUsers": "Active users"
+  },
+  "syncHealth": {
+    "title": "Sync health",
+    "description": "Telemetry pipeline status.",
+    "totalRuns": "Total runs",
+    "successRate": "Success rate",
+    "successful": "Successful",
+    "failed": "Failed",
+    "lastSync": "Last sync",
+    "viewPipeline": "View pipeline details"
+  },
+  "recentActivity": {
+    "title": "Recent activity",
+    "description": "Latest events received from this tenant's sync agent.",
+    "batch": "batch",
+    "empty": {
+      "title": "No activity yet",
+      "description": "Recent ingestion events will appear here as sync agents report in."
+    }
+  },
+  "syncStatus": {
+    "completed": "Completed",
+    "failed": "Failed",
+    "processing": "Processing",
+    "running": "Running",
+    "pending": "Pending",
+    "partial": "Partial",
+    "never": "Never",
+    "ok": "OK",
+    "success": "Success",
+    "error": "Error",
+    "unknown": "Unknown"
+  }
+}

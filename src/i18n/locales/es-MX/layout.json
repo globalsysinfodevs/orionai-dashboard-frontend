@@ -1,0 +1,40 @@
+{
+  "nav": {
+    "overview": "Resumen",
+    "analytics": "Analíticas",
+    "activity": "Actividad",
+    "tenants": "Clientes",
+    "apiKeys": "Claves API",
+    "settings": "Configuración"
+  },
+  "sidebar": {
+    "console": "Consola de Analíticas",
+    "activeTenant": "Cliente activo",
+    "helpTitle": "¿Necesitas ayuda?",
+    "helpBody": "Consulta la documentación de la API para la ingesta o contacta a tu equipo de cuenta.",
+    "helpLink": "Abrir referencia de la API →"
+  },
+  "topbar": {
+    "openNav": "Abrir navegación",
+    "toggleTheme": "Cambiar tema",
+    "switchToLight": "Cambiar a modo claro",
+    "switchToDark": "Cambiar a modo oscuro",
+    "admin": "Administrador",
+    "adminUser": "Usuario administrador",
+    "adminShort": "Admin",
+    "administrator": "Administrador",
+    "superuser": "Superusuario",
+    "accountSettings": "Configuración de la cuenta",
+    "signOut": "Cerrar sesión"
+  },
+  "tenantSwitcher": {
+    "noTenants": "Sin clientes",
+    "selectTenant": "Selecciona un cliente",
+    "searchPlaceholder": "Buscar clientes…",
+    "noMatch": "Ningún cliente coincide con “{{query}}”.",
+    "inactive": "Inactivo"
+  },
+  "language": {
+    "label": "Idioma"
+  }
+}

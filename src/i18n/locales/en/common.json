@@ -1,0 +1,53 @@
+{
+  "actions": {
+    "save": "Save",
+    "saveChanges": "Save changes",
+    "cancel": "Cancel",
+    "create": "Create",
+    "edit": "Edit",
+    "delete": "Delete",
+    "revoke": "Revoke",
+    "refresh": "Refresh",
+    "generate": "Generate",
+    "close": "Close",
+    "back": "Back",
+    "export": "Export",
+    "exportCsv": "Export CSV",
+    "copy": "Copy",
+    "viewAll": "View all",
+    "search": "Search…"
+  },
+  "status": {
+    "active": "Active",
+    "disabled": "Disabled",
+    "revoked": "Revoked",
+    "never": "Never",
+    "none": "None",
+    "unknown": "Unknown",
+    "healthy": "Healthy",
+    "warning": "Warning",
+    "error": "Error"
+  },
+  "labels": {
+    "status": "Status",
+    "actions": "Actions",
+    "created": "Created",
+    "updated": "Updated",
+    "total": "Total",
+    "loading": "Loading…",
+    "contactEmail": "Contact email",
+    "description": "Description",
+    "slug": "Slug",
+    "label": "Label",
+    "prefix": "Prefix",
+    "lastUsed": "Last used",
+    "expires": "Expires"
+  },
+  "toast": {
+    "copied": "Copied"
+  },
+  "errors": {
+    "backendUnreachable": "Unable to reach the OrionAI backend. Please check your connection.",
+    "generic": "Something went wrong."
+  }
+}

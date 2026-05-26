@@ -1,0 +1,29 @@
+{
+  "eyebrow": "Configuración",
+  "title": "Cuenta y preferencias",
+  "description": "Tu perfil, preferencias de la consola y estado de la plataforma.",
+  "profile": {
+    "title": "Perfil",
+    "description": "Tu identidad de administrador dentro de OrionAI.",
+    "superuser": "Superusuario",
+    "administrator": "Administrador",
+    "memberSince": "Miembro desde",
+    "lastSignIn": "Último inicio de sesión"
+  },
+  "appearance": {
+    "title": "Apariencia",
+    "description": "Elige el tema visual que más te convenga.",
+    "light": "Claro",
+    "dark": "Oscuro"
+  },
+  "status": {
+    "title": "Estado de la plataforma",
+    "description": "Estado en vivo del backend de OrionAI.",
+    "operational": "Todos los sistemas operativos",
+    "issue": "Problema del servicio",
+    "unreachable": "No se puede conectar con el backend de OrionAI en este momento.",
+    "version": "Versión",
+    "environment": "Entorno",
+    "uptime": "Tiempo de actividad"
+  }
+}

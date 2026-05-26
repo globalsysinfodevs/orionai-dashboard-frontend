@@ -1,0 +1,58 @@
+{
+  "eyebrow": "Analíticas",
+  "title": "Analíticas de uso",
+  "description": "Agregados diarios y rendimiento de la canalización de sincronización para el cliente activo.",
+  "summary": {
+    "messages": "Mensajes",
+    "tokens": "Tokens",
+    "documentsUploaded": "Documentos subidos",
+    "peakActiveUsers": "Pico de usuarios activos",
+    "avgResponseTime": "Tiempo de respuesta promedio"
+  },
+  "series": {
+    "user": "Usuario",
+    "assistant": "Asistente",
+    "tokens": "Tokens",
+    "totalRuns": "Ejecuciones totales",
+    "failed": "Fallidas"
+  },
+  "messagesChart": {
+    "title": "Mensajes a lo largo del tiempo",
+    "description": "Volumen diario de mensajes de usuario vs. asistente.",
+    "empty": {
+      "title": "Aún no se han registrado mensajes",
+      "description": "Una vez que se ingieran mensajes, esta gráfica mostrará el desglose."
+    }
+  },
+  "tokensChart": {
+    "title": "Consumo de tokens",
+    "description": "Huella de cómputo diaria.",
+    "empty": {
+      "title": "Sin datos de tokens",
+      "description": "Los totales de tokens aparecerán después de la primera ingesta."
+    }
+  },
+  "syncChart": {
+    "title": "Rendimiento de la canalización de sincronización",
+    "description": "Ejecuciones de sincronización exitosas vs. fallidas por día.",
+    "empty": {
+      "title": "Aún no hay ejecuciones de sincronización",
+      "description": "Las estadísticas de la canalización aparecerán una vez que se ejecuten las sincronizaciones."
+    }
+  },
+  "recentRuns": {
+    "title": "Ejecuciones recientes de sincronización",
+    "description": "Los lotes de ingesta más recientes y sus resultados.",
+    "empty": {
+      "title": "Sin ejecuciones recientes",
+      "description": "El historial de ejecuciones de sincronización aparecerá aquí a medida que lleguen los lotes."
+    },
+    "columns": {
+      "syncRun": "Ejecución de sincronización",
+      "started": "Iniciada",
+      "completed": "Completada",
+      "batches": "Lotes",
+      "records": "Registros"
+    }
+  }
+}
