@@ -28,5 +28,46 @@
       "title": "No matching users",
       "description": "Try a different search term or status filter."
     }
+  },
+  "viewProfile": "View profile",
+  "detail": {
+    "eyebrow": "User profile",
+    "back": "Back to users",
+    "verified": "Verified",
+    "notFound": {
+      "title": "User not found",
+      "description": "This user does not exist for the selected tenant, or has been removed."
+    },
+    "stats": {
+      "questions": "Questions asked",
+      "documents": "Documents uploaded",
+      "tokens": "Tokens used",
+      "conversations": "Conversations"
+    },
+    "profile": {
+      "title": "Profile",
+      "description": "Identity and source metadata for this user.",
+      "email": "Email",
+      "sourceUserId": "Source user ID",
+      "status": "Status",
+      "lastActive": "Last active",
+      "firstSeen": "First seen",
+      "sourceCreated": "Source created",
+      "sourceUpdated": "Source updated"
+    },
+    "conversations": {
+      "title": "Conversations",
+      "summary_one": "{{count}} conversation",
+      "summary_other": "{{count}} conversations",
+      "untitled": "Untitled conversation",
+      "messages": "Messages",
+      "tokens": "Tokens",
+      "lastMessage": "Last message",
+      "open": "Open conversation",
+      "empty": {
+        "title": "No conversations",
+        "description": "This user hasn't started any chatbot conversations yet."
+      }
+    }
   }
 }

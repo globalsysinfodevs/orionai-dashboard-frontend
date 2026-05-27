@@ -28,5 +28,46 @@
       "title": "Sin usuarios coincidentes",
       "description": "Prueba con otro término de búsqueda o filtro de estado."
     }
+  },
+  "viewProfile": "Ver perfil",
+  "detail": {
+    "eyebrow": "Perfil de usuario",
+    "back": "Volver a usuarios",
+    "verified": "Verificado",
+    "notFound": {
+      "title": "Usuario no encontrado",
+      "description": "Este usuario no existe para el cliente seleccionado o ha sido eliminado."
+    },
+    "stats": {
+      "questions": "Preguntas hechas",
+      "documents": "Documentos subidos",
+      "tokens": "Tokens usados",
+      "conversations": "Conversaciones"
+    },
+    "profile": {
+      "title": "Perfil",
+      "description": "Identidad y metadatos de origen de este usuario.",
+      "email": "Correo",
+      "sourceUserId": "ID de usuario de origen",
+      "status": "Estado",
+      "lastActive": "Última actividad",
+      "firstSeen": "Visto por primera vez",
+      "sourceCreated": "Creado en origen",
+      "sourceUpdated": "Actualizado en origen"
+    },
+    "conversations": {
+      "title": "Conversaciones",
+      "summary_one": "{{count}} conversación",
+      "summary_other": "{{count}} conversaciones",
+      "untitled": "Conversación sin título",
+      "messages": "Mensajes",
+      "tokens": "Tokens",
+      "lastMessage": "Último mensaje",
+      "open": "Abrir conversación",
+      "empty": {
+        "title": "Sin conversaciones",
+        "description": "Este usuario aún no ha iniciado ninguna conversación con el chatbot."
+      }
+    }
   }
 }

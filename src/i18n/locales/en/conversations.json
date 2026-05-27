@@ -32,5 +32,25 @@
       "title": "No matching messages",
       "description": "Try a different search term or role filter."
     }
+  },
+  "detail": {
+    "eyebrow": "Conversation",
+    "back": "Back",
+    "untitled": "Untitled conversation",
+    "notFound": {
+      "title": "Conversation not found",
+      "description": "This conversation does not exist for the selected tenant, or has been removed."
+    },
+    "header": {
+      "messages": "Messages",
+      "tokens": "Tokens",
+      "user": "User",
+      "started": "Started",
+      "lastActivity": "Last activity"
+    },
+    "empty": {
+      "title": "No messages",
+      "description": "This conversation has no messages."
+    }
   }
 }

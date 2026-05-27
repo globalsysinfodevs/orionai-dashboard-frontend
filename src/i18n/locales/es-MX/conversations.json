@@ -32,5 +32,25 @@
       "title": "Sin mensajes coincidentes",
       "description": "Prueba con otro término de búsqueda o filtro de rol."
     }
+  },
+  "detail": {
+    "eyebrow": "Conversación",
+    "back": "Volver",
+    "untitled": "Conversación sin título",
+    "notFound": {
+      "title": "Conversación no encontrada",
+      "description": "Esta conversación no existe para el cliente seleccionado o ha sido eliminada."
+    },
+    "header": {
+      "messages": "Mensajes",
+      "tokens": "Tokens",
+      "user": "Usuario",
+      "started": "Iniciada",
+      "lastActivity": "Última actividad"
+    },
+    "empty": {
+      "title": "Sin mensajes",
+      "description": "Esta conversación no tiene mensajes."
+    }
   }
 }

@@ -8,6 +8,7 @@ import type {
   ApiKeyInfo,
   ApiPaginatedResponse,
   ConversationListItem,
+  ConversationMessagesResponse,
   DashboardOverview,
   HealthStatus,
   KpiResponse,
@@ -20,7 +21,9 @@ import type {
   TenantUpdateInput,
   TokenPair,
   UsageMetricsDaily,
+  UserConversation,
   UserListItem,
+  UserStats,
 } from "@/types";
 
 const ACCESS_TOKEN_KEY = "orion.access_token";
@@ -330,6 +333,44 @@ export const dashboardApi = {
       { params },
     );
     return unwrapPaginated(res.data);
+  },
+
+  // ── User-scoped endpoints ───────────────────────────────────────────────────
+  // Profile + aggregated analytics for a single user.
+  userStats: async (user_id: string, tenant_id: string): Promise<UserStats> => {
+    const res = await apiClient.get<ApiEnvelope<UserStats>>(
+      `/dashboard/users/${user_id}/stats`,
+      { params: { tenant_id } },
+    );
+    return unwrap(res.data);
+  },
+  // Paginated list of a user's chatbot conversations.
+  userConversations: async (params: {
+    user_id: string;
+    tenant_id: string;
+    page?: number;
+    page_size?: number;
+  }): Promise<Paginated<UserConversation>> => {
+    const { user_id, ...query } = params;
+    const res = await apiClient.get<ApiPaginatedResponse<UserConversation>>(
+      `/dashboard/users/${user_id}/conversations`,
+      { params: query },
+    );
+    return unwrapPaginated(res.data);
+  },
+  // Conversation header + paginated messages for a chatbot.
+  conversationMessages: async (params: {
+    chatbot_id: string;
+    tenant_id: string;
+    page?: number;
+    page_size?: number;
+  }): Promise<ConversationMessagesResponse> => {
+    const { chatbot_id, ...query } = params;
+    const res = await apiClient.get<ApiEnvelope<ConversationMessagesResponse>>(
+      `/dashboard/conversations/${chatbot_id}/messages`,
+      { params: query },
+    );
+    return unwrap(res.data);
   },
 };
 

@@ -1,8 +1,10 @@
 import { useEffect, useMemo, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { keepPreviousData, useQuery } from "@tanstack/react-query";
 import {
   CheckCircle2,
+  ChevronRight,
   FileText,
   MessageSquare,
   RefreshCw,
@@ -28,6 +30,7 @@ const STATUS_OPTIONS = ["all", "active", "inactive"] as const;
 
 export function UsersPage() {
   const { t } = useTranslation(["users", "common"]);
+  const navigate = useNavigate();
   const { activeTenant } = useTenants();
   const tenantId = activeTenant?.tenant_id;
 
@@ -148,11 +151,17 @@ export function UsersPage() {
                   <th className="text-right">{t("table.questions")}</th>
                   <th className="text-right">{t("table.documents")}</th>
                   <th>{t("table.lastActive")}</th>
+                  <th className="w-8" aria-label={t("viewProfile")} />
                 </tr>
               </thead>
               <tbody>
                 {rows.map((u) => (
-                  <tr key={u.user_id}>
+                  <tr
+                    key={u.user_id}
+                    onClick={() => navigate(`/users/${u.user_id}`)}
+                    className="cursor-pointer transition hover:bg-ink-50/70 dark:hover:bg-ink-800/40"
+                    title={t("viewProfile")}
+                  >
                     <td>
                       <div className="flex min-w-0 items-center gap-3">
                         <Avatar name={u.name || u.email || "?"} size="sm" />
@@ -194,6 +203,9 @@ export function UsersPage() {
                       >
                         {formatRelative(u.last_active_at)}
                       </span>
+                    </td>
+                    <td className="text-right">
+                      <ChevronRight className="h-4 w-4 text-ink-300 dark:text-ink-600" />
                     </td>
                   </tr>
                 ))}

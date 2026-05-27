@@ -263,6 +263,73 @@ export interface ConversationListItem {
   message_timestamp: string | null;
 }
 
+// ── User-scoped endpoints ────────────────────────────────────────────────────
+
+/** GET /dashboard/users/{user_id}/stats — profile + aggregated analytics. */
+export interface UserStats {
+  user_id: string;
+  tenant_id: string;
+  email: string | null;
+  name: string | null;
+  status: string | null;
+  is_verified: boolean | null;
+  source_user_id: string;
+  source_created_at: string | null;
+  source_updated_at: string | null;
+  created_at: string | null;
+  total_questions_asked: number;
+  total_documents_uploaded: number;
+  total_tokens_used: number;
+  total_conversations: number;
+  last_active_at: string | null;
+}
+
+/** Row from GET /dashboard/users/{user_id}/conversations (paginated). */
+export interface UserConversation {
+  chatbot_id: string;
+  source_chatbot_id: string | null;
+  chatbot_name: string | null;
+  context_preview: string | null;
+  total_messages: number;
+  user_messages: number;
+  assistant_messages: number;
+  total_tokens: number;
+  first_message_at: string | null;
+  last_message_at: string | null;
+}
+
+/** A single message inside a chatbot conversation (HTML stripped on display). */
+export interface ChatbotMessage {
+  message_id: string;
+  role: string | null;
+  content: string | null;
+  token_count: number | null;
+  sequence_index: number | null;
+  message_timestamp: string | null;
+}
+
+/** Conversation header/metadata for a chatbot. */
+export interface ChatbotConversationDetail {
+  chatbot_id: string;
+  source_chatbot_id: string | null;
+  chatbot_name: string | null;
+  user_id: string | null;
+  user_email: string | null;
+  user_name: string | null;
+  tenant_id: string;
+  total_messages: number;
+  total_tokens: number;
+  first_message_at: string | null;
+  last_message_at: string | null;
+}
+
+/** GET /dashboard/conversations/{chatbot_id}/messages — header + paginated messages. */
+export interface ConversationMessagesResponse {
+  conversation: ChatbotConversationDetail;
+  messages: ChatbotMessage[];
+  pagination: PaginationMeta;
+}
+
 export interface HealthStatus {
   status: string;
   version: string;
