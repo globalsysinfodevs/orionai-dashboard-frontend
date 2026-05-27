@@ -43,6 +43,12 @@
     "lastUsed": "Último uso",
     "expires": "Vence"
   },
+  "pagination": {
+    "range": "Mostrando {{from}}–{{to}} de {{total}}",
+    "page": "Página {{page}} de {{total}}",
+    "prev": "Anterior",
+    "next": "Siguiente"
+  },
   "toast": {
     "copied": "Copiado"
   },

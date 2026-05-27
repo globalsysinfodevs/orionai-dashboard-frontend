@@ -1,0 +1,36 @@
+{
+  "eyebrow": "History",
+  "title": "Conversations",
+  "description": "Browse chatbot messages for the selected tenant, with user context and token counts.",
+  "summary_one": "{{count}} message",
+  "summary_other": "{{count}} messages",
+  "searchPlaceholder": "Search by user name or email…",
+  "assistant": "Assistant",
+  "anonymousUser": "Anonymous user",
+  "chatbot": "Bot",
+  "noContent": "No content",
+  "tokens_one": "{{value}} token",
+  "tokens_other": "{{value}} tokens",
+  "role": {
+    "user": "User",
+    "assistant": "Assistant"
+  },
+  "roleFilter": {
+    "all": "All",
+    "user": "User",
+    "assistant": "Assistant"
+  },
+  "list": {
+    "title": "Message history"
+  },
+  "empty": {
+    "none": {
+      "title": "No conversations yet",
+      "description": "Chatbot messages will appear here once this tenant starts syncing."
+    },
+    "filtered": {
+      "title": "No matching messages",
+      "description": "Try a different search term or role filter."
+    }
+  }
+}

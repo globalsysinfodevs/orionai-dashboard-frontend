@@ -2,6 +2,8 @@
   "nav": {
     "overview": "Overview",
     "analytics": "Analytics",
+    "users": "Users",
+    "conversations": "Conversations",
     "activity": "Activity",
     "tenants": "Tenants",
     "apiKeys": "API Keys",

@@ -8,6 +8,8 @@ import enLayout from "./locales/en/layout.json";
 import enAuth from "./locales/en/auth.json";
 import enDashboard from "./locales/en/dashboard.json";
 import enAnalytics from "./locales/en/analytics.json";
+import enUsers from "./locales/en/users.json";
+import enConversations from "./locales/en/conversations.json";
 import enActivity from "./locales/en/activity.json";
 import enTenants from "./locales/en/tenants.json";
 import enTenantDetail from "./locales/en/tenantDetail.json";
@@ -20,6 +22,8 @@ import esLayout from "./locales/es-MX/layout.json";
 import esAuth from "./locales/es-MX/auth.json";
 import esDashboard from "./locales/es-MX/dashboard.json";
 import esAnalytics from "./locales/es-MX/analytics.json";
+import esUsers from "./locales/es-MX/users.json";
+import esConversations from "./locales/es-MX/conversations.json";
 import esActivity from "./locales/es-MX/activity.json";
 import esTenants from "./locales/es-MX/tenants.json";
 import esTenantDetail from "./locales/es-MX/tenantDetail.json";
@@ -32,6 +36,8 @@ export const NAMESPACES = [
   "auth",
   "dashboard",
   "analytics",
+  "users",
+  "conversations",
   "activity",
   "tenants",
   "tenantDetail",
@@ -55,6 +61,8 @@ const resources = {
     auth: enAuth,
     dashboard: enDashboard,
     analytics: enAnalytics,
+    users: enUsers,
+    conversations: enConversations,
     activity: enActivity,
     tenants: enTenants,
     tenantDetail: enTenantDetail,
@@ -67,6 +75,8 @@ const resources = {
     auth: esAuth,
     dashboard: esDashboard,
     analytics: esAnalytics,
+    users: esUsers,
+    conversations: esConversations,
     activity: esActivity,
     tenants: esTenants,
     tenantDetail: esTenantDetail,

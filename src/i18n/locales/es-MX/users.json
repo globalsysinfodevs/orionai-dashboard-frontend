@@ -1,0 +1,32 @@
+{
+  "eyebrow": "Directorio",
+  "title": "Usuarios",
+  "description": "Explora a cada usuario final del cliente seleccionado con analíticas de actividad por usuario.",
+  "summary_one": "{{count}} usuario",
+  "summary_other": "{{count}} usuarios",
+  "searchPlaceholder": "Buscar por nombre o correo…",
+  "notVerified": "Sin verificar",
+  "statusFilter": {
+    "all": "Todos los estados",
+    "active": "Activo",
+    "inactive": "Inactivo"
+  },
+  "table": {
+    "title": "Directorio de usuarios",
+    "user": "Usuario",
+    "questions": "Preguntas",
+    "documents": "Documentos",
+    "lastActive": "Última actividad",
+    "unknownUser": "Usuario desconocido"
+  },
+  "empty": {
+    "none": {
+      "title": "Aún no hay usuarios",
+      "description": "Los usuarios finales aparecerán aquí cuando este cliente comience a sincronizar."
+    },
+    "filtered": {
+      "title": "Sin usuarios coincidentes",
+      "description": "Prueba con otro término de búsqueda o filtro de estado."
+    }
+  }
+}

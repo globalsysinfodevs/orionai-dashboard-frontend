@@ -1,0 +1,36 @@
+{
+  "eyebrow": "Historial",
+  "title": "Conversaciones",
+  "description": "Explora los mensajes del chatbot del cliente seleccionado, con contexto de usuario y conteo de tokens.",
+  "summary_one": "{{count}} mensaje",
+  "summary_other": "{{count}} mensajes",
+  "searchPlaceholder": "Buscar por nombre o correo del usuario…",
+  "assistant": "Asistente",
+  "anonymousUser": "Usuario anónimo",
+  "chatbot": "Bot",
+  "noContent": "Sin contenido",
+  "tokens_one": "{{value}} token",
+  "tokens_other": "{{value}} tokens",
+  "role": {
+    "user": "Usuario",
+    "assistant": "Asistente"
+  },
+  "roleFilter": {
+    "all": "Todos",
+    "user": "Usuario",
+    "assistant": "Asistente"
+  },
+  "list": {
+    "title": "Historial de mensajes"
+  },
+  "empty": {
+    "none": {
+      "title": "Aún no hay conversaciones",
+      "description": "Los mensajes del chatbot aparecerán aquí cuando este cliente comience a sincronizar."
+    },
+    "filtered": {
+      "title": "Sin mensajes coincidentes",
+      "description": "Prueba con otro término de búsqueda o filtro de rol."
+    }
+  }
+}

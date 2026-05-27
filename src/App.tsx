@@ -6,6 +6,8 @@ import { LoginPage } from "@/pages/LoginPage";
 import { DashboardOverviewPage } from "@/pages/DashboardOverviewPage";
 import { AnalyticsPage } from "@/pages/AnalyticsPage";
 import { ActivityPage } from "@/pages/ActivityPage";
+import { UsersPage } from "@/pages/UsersPage";
+import { ConversationsPage } from "@/pages/ConversationsPage";
 import { TenantsPage } from "@/pages/TenantsPage";
 import { TenantDetailPage } from "@/pages/TenantDetailPage";
 import { ApiKeysPage } from "@/pages/ApiKeysPage";
@@ -28,6 +30,8 @@ export default function App() {
         <Route index element={<Navigate to="/dashboard" replace />} />
         <Route path="/dashboard" element={<DashboardOverviewPage />} />
         <Route path="/analytics" element={<AnalyticsPage />} />
+        <Route path="/users" element={<UsersPage />} />
+        <Route path="/conversations" element={<ConversationsPage />} />
         <Route path="/activity" element={<ActivityPage />} />
         <Route path="/tenants" element={<TenantsPage />} />
         <Route path="/tenants/:tenantId" element={<TenantDetailPage />} />

@@ -1,0 +1,32 @@
+{
+  "eyebrow": "Directory",
+  "title": "Users",
+  "description": "Explore every end user for the selected tenant with per-user activity analytics.",
+  "summary_one": "{{count}} user",
+  "summary_other": "{{count}} users",
+  "searchPlaceholder": "Search by name or email…",
+  "notVerified": "Not verified",
+  "statusFilter": {
+    "all": "All statuses",
+    "active": "Active",
+    "inactive": "Inactive"
+  },
+  "table": {
+    "title": "User directory",
+    "user": "User",
+    "questions": "Questions",
+    "documents": "Documents",
+    "lastActive": "Last active",
+    "unknownUser": "Unknown user"
+  },
+  "empty": {
+    "none": {
+      "title": "No users yet",
+      "description": "End users will appear here once this tenant starts syncing."
+    },
+    "filtered": {
+      "title": "No matching users",
+      "description": "Try a different search term or status filter."
+    }
+  }
+}

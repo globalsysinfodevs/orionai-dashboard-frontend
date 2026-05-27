@@ -45,6 +45,17 @@
     "messages": "Mensajes",
     "activeUsers": "Usuarios activos"
   },
+  "tokenUsage": {
+    "title": "Uso de tokens",
+    "description": "Consumo de la cuota mensual de tokens de la suscripción de este cliente.",
+    "consumedOfQuota": "{{used}} de {{allowed}} tokens usados",
+    "remaining": "Restantes",
+    "lastReset": "Cuota reiniciada por última vez {{when}}",
+    "empty": {
+      "title": "Sin cuota de suscripción",
+      "description": "Este cliente no tiene una cuota de tokens configurada, por lo que no se puede rastrear el uso."
+    }
+  },
   "syncHealth": {
     "title": "Estado de sincronización",
     "description": "Estado de la canalización de telemetría.",
@@ -52,6 +63,9 @@
     "successRate": "Tasa de éxito",
     "successful": "Exitosas",
     "failed": "Fallidas",
+    "avgDuration": "Duración prom.",
+    "failedBatches": "Lotes fallidos",
+    "seconds": "{{value}} s",
     "lastSync": "Última sincronización",
     "viewPipeline": "Ver detalles de la canalización"
   },

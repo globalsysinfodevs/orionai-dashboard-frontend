@@ -4,8 +4,10 @@ import {
   Building2,
   KeyRound,
   LayoutDashboard,
+  MessagesSquare,
   Settings,
   Sparkles,
+  Users,
 } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { cn } from "@/lib/utils";
@@ -14,6 +16,8 @@ import { useTenants } from "@/contexts/TenantContext";
 const navItems = [
   { to: "/dashboard", labelKey: "nav.overview", icon: LayoutDashboard, end: true },
   { to: "/analytics", labelKey: "nav.analytics", icon: Sparkles, end: false },
+  { to: "/users", labelKey: "nav.users", icon: Users, end: false },
+  { to: "/conversations", labelKey: "nav.conversations", icon: MessagesSquare, end: false },
   { to: "/activity", labelKey: "nav.activity", icon: Activity, end: false },
   { to: "/tenants", labelKey: "nav.tenants", icon: Building2, end: false },
   { to: "/api-keys", labelKey: "nav.apiKeys", icon: KeyRound, end: false },

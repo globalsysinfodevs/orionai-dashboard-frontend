@@ -16,6 +16,32 @@ export interface ApiErrorEnvelope {
 
 export type ApiEnvelope<T> = ApiSuccessEnvelope<T> | ApiErrorEnvelope;
 
+// ── Pagination ───────────────────────────────────────────────────────────────
+export interface PaginationMeta {
+  total: number;
+  page: number;
+  page_size: number;
+  total_pages: number;
+  has_next: boolean;
+  has_prev: boolean;
+}
+
+export interface ApiPaginatedEnvelope<T> {
+  success: true;
+  message: string;
+  data: T[];
+  pagination: PaginationMeta;
+  request_id?: string | null;
+}
+
+export type ApiPaginatedResponse<T> = ApiPaginatedEnvelope<T> | ApiErrorEnvelope;
+
+/** Result of a paginated endpoint after unwrapping the envelope. */
+export interface Paginated<T> {
+  items: T[];
+  pagination: PaginationMeta;
+}
+
 // ── Auth ─────────────────────────────────────────────────────────────────────
 export interface TokenPair {
   access_token: string;
@@ -150,6 +176,91 @@ export interface RecentActivityResponse {
   tenant_id: string;
   items: ActivityItem[];
   total: number;
+}
+
+// ── Dashboard homepage (new endpoints) ───────────────────────────────────────
+export interface AdminProfile {
+  id: number;
+  email: string;
+  full_name: string | null;
+  role: string; // "superuser" | "admin"
+  last_login_at: string | null;
+}
+
+export interface IngestionHealth {
+  last_sync_at: string | null;
+  last_sync_status: string | null;
+  sync_health_label: string; // "healthy" | "warning" | "error" | "never"
+  total_sync_runs: number;
+  successful_runs: number;
+  failed_runs: number;
+  failed_batches_count: number;
+  avg_sync_duration_seconds: number | null;
+}
+
+/** GET /dashboard/overview — lightweight homepage bootstrap. */
+export interface DashboardOverview {
+  admin_profile: AdminProfile;
+  ingestion_health: IngestionHealth;
+}
+
+export interface TenantSelector {
+  tenant_id: string;
+  company_name: string;
+  slug: string;
+  status: string;
+}
+
+export interface TokenUsage {
+  allowed_tokens_per_month: number | null;
+  tokens_remaining: number | null;
+  tokens_used: number | null;
+  usage_percentage: number | null; // 0.0 – 100.0
+  subscription_status: string | null;
+  last_token_reset_at: string | null;
+}
+
+export interface KpiSummary {
+  total_documents: number;
+  total_users: number;
+  total_messages: number;
+  total_chatbots: number;
+  token_usage: TokenUsage;
+}
+
+/** GET /dashboard/kpi — tenant info + KPI summary cards. */
+export interface KpiResponse {
+  tenant: TenantSelector;
+  kpi_summary: KpiSummary;
+}
+
+/** Row from GET /dashboard/users (paginated). */
+export interface UserListItem {
+  user_id: string;
+  email: string | null;
+  name: string | null;
+  status: string | null;
+  is_verified: boolean | null;
+  questions_asked: number;
+  documents_uploaded: number;
+  last_active_at: string | null;
+  source_created_at: string | null;
+  source_updated_at: string | null;
+  created_at: string | null;
+}
+
+/** Row from GET /dashboard/conversations (paginated). */
+export interface ConversationListItem {
+  message_id: string;
+  user_id: string | null;
+  user_email: string | null;
+  user_name: string | null;
+  source_chatbot_id: string | null;
+  role: string | null;
+  content_preview: string | null;
+  token_count: number | null;
+  sequence_index: number | null;
+  message_timestamp: string | null;
 }
 
 export interface HealthStatus {

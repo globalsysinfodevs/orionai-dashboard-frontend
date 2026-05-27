@@ -45,6 +45,17 @@
     "messages": "Messages",
     "activeUsers": "Active users"
   },
+  "tokenUsage": {
+    "title": "Token usage",
+    "description": "Monthly token quota consumption for this tenant's subscription.",
+    "consumedOfQuota": "{{used}} of {{allowed}} tokens used",
+    "remaining": "Remaining",
+    "lastReset": "Quota last reset {{when}}",
+    "empty": {
+      "title": "No subscription quota",
+      "description": "This tenant has no token quota configured, so usage can't be tracked."
+    }
+  },
   "syncHealth": {
     "title": "Sync health",
     "description": "Telemetry pipeline status.",
@@ -52,6 +63,9 @@
     "successRate": "Success rate",
     "successful": "Successful",
     "failed": "Failed",
+    "avgDuration": "Avg duration",
+    "failedBatches": "Failed batches",
+    "seconds": "{{value}}s",
     "lastSync": "Last sync",
     "viewPipeline": "View pipeline details"
   },

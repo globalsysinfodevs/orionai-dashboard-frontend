@@ -6,7 +6,12 @@ import type {
   ApiEnvelope,
   ApiKeyCreated,
   ApiKeyInfo,
+  ApiPaginatedResponse,
+  ConversationListItem,
+  DashboardOverview,
   HealthStatus,
+  KpiResponse,
+  Paginated,
   RecentActivityResponse,
   SyncHealthStats,
   Tenant,
@@ -15,6 +20,7 @@ import type {
   TenantUpdateInput,
   TokenPair,
   UsageMetricsDaily,
+  UserListItem,
 } from "@/types";
 
 const ACCESS_TOKEN_KEY = "orion.access_token";
@@ -146,6 +152,13 @@ function unwrap<T>(envelope: ApiEnvelope<T>): T {
   return envelope.data;
 }
 
+function unwrapPaginated<T>(envelope: ApiPaginatedResponse<T>): Paginated<T> {
+  if (!envelope.success) {
+    throw new ApiError(envelope.message, envelope);
+  }
+  return { items: envelope.data, pagination: envelope.pagination };
+}
+
 export class ApiError extends Error {
   public readonly envelope?: ApiEnvelope<unknown>;
   public readonly status?: number;
@@ -272,6 +285,51 @@ export const dashboardApi = {
       { params: { limit } },
     );
     return unwrap(res.data);
+  },
+
+  // ── New homepage endpoints ─────────────────────────────────────────────────
+  // Lightweight bootstrap: authenticated admin profile + ingestion health.
+  homeOverview: async (tenant_id: string): Promise<DashboardOverview> => {
+    const res = await apiClient.get<ApiEnvelope<DashboardOverview>>(
+      `/dashboard/overview`,
+      { params: { tenant_id } },
+    );
+    return unwrap(res.data);
+  },
+  // Tenant selector info + KPI summary cards (incl. token quota usage).
+  kpi: async (tenant_id: string): Promise<KpiResponse> => {
+    const res = await apiClient.get<ApiEnvelope<KpiResponse>>(`/dashboard/kpi`, {
+      params: { tenant_id },
+    });
+    return unwrap(res.data);
+  },
+  // Paginated per-user analytics.
+  users: async (params: {
+    tenant_id: string;
+    page?: number;
+    page_size?: number;
+    search?: string;
+    status?: string;
+  }): Promise<Paginated<UserListItem>> => {
+    const res = await apiClient.get<ApiPaginatedResponse<UserListItem>>(
+      `/dashboard/users`,
+      { params },
+    );
+    return unwrapPaginated(res.data);
+  },
+  // Paginated conversation / message history.
+  conversations: async (params: {
+    tenant_id: string;
+    page?: number;
+    page_size?: number;
+    role?: string;
+    user_search?: string;
+  }): Promise<Paginated<ConversationListItem>> => {
+    const res = await apiClient.get<ApiPaginatedResponse<ConversationListItem>>(
+      `/dashboard/conversations`,
+      { params },
+    );
+    return unwrapPaginated(res.data);
   },
 };
 

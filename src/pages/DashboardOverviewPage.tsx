@@ -10,6 +10,7 @@ import {
   Clock,
   Coins,
   FileText,
+  Gauge,
   MessageSquare,
   RefreshCw,
   TrendingUp,
@@ -39,10 +40,11 @@ import {
   formatCompact,
   formatDateTime,
   formatNumber,
+  formatPercent,
   formatRelative,
   formatShortDate,
 } from "@/lib/format";
-import { syncStatusTone, syncStatusLabel } from "@/lib/sync";
+import { syncStatusLabel } from "@/lib/sync";
 
 export function DashboardOverviewPage() {
   const { t } = useTranslation(["dashboard", "common"]);
@@ -73,6 +75,23 @@ export function DashboardOverviewPage() {
     enabled: !!tenantId,
   });
 
+  // New homepage endpoints: token quota usage + richer ingestion health.
+  const kpi = useQuery({
+    queryKey: ["kpi", tenantId],
+    queryFn: () => dashboardApi.kpi(tenantId!),
+    enabled: !!tenantId,
+  });
+
+  const home = useQuery({
+    queryKey: ["home-overview", tenantId],
+    queryFn: () => dashboardApi.homeOverview(tenantId!),
+    enabled: !!tenantId,
+  });
+
+  const tokenUsage = kpi.data?.kpi_summary.token_usage;
+  const ingestion = home.data?.ingestion_health;
+  const healthLabel = ingestion?.sync_health_label ?? overview.data?.sync_health;
+
   const chartData = useMemo(() => {
     const items = aggregates.data ?? [];
     return items
@@ -101,6 +120,8 @@ export function DashboardOverviewPage() {
     aggregates.refetch();
     sync.refetch();
     activity.refetch();
+    kpi.refetch();
+    home.refetch();
   }
 
   if (!tenantsLoading && tenants.length === 0) {
@@ -151,7 +172,9 @@ export function DashboardOverviewPage() {
               overview.isFetching ||
               aggregates.isFetching ||
               sync.isFetching ||
-              activity.isFetching
+              activity.isFetching ||
+              kpi.isFetching ||
+              home.isFetching
             }
           >
             {t("common:actions.refresh")}
@@ -200,6 +223,9 @@ export function DashboardOverviewPage() {
           accent="amber"
         />
       </div>
+
+      {/* Token quota usage */}
+      <TokenUsageCard usage={tokenUsage} loading={kpi.isLoading} />
 
       {/* Chart + sync */}
       <div className="grid grid-cols-1 gap-6 xl:grid-cols-3">
@@ -299,10 +325,10 @@ export function DashboardOverviewPage() {
             description={t("syncHealth.description")}
             icon={<Wifi className="h-4 w-4" />}
             actions={
-              <Badge tone={overview.data?.sync_health === "healthy" ? "success" : "warning"} dot>
-                {overview.data?.sync_health
-                  ? t(`common:status.${overview.data.sync_health}`, {
-                      defaultValue: overview.data.sync_health,
+              <Badge tone={healthTone(healthLabel)} dot>
+                {healthLabel
+                  ? t(`common:status.${healthLabel}`, {
+                      defaultValue: healthLabel,
                     })
                   : "—"}
               </Badge>
@@ -329,8 +355,29 @@ export function DashboardOverviewPage() {
               />
               <Metric
                 label={t("syncHealth.failed")}
-                value={formatNumber(sync.data?.failed_runs)}
-                trend={(sync.data?.failed_runs ?? 0) > 0 ? "negative" : undefined}
+                value={formatNumber(sync.data?.failed_runs ?? ingestion?.failed_runs)}
+                trend={
+                  (sync.data?.failed_runs ?? ingestion?.failed_runs ?? 0) > 0
+                    ? "negative"
+                    : undefined
+                }
+              />
+              <Metric
+                label={t("syncHealth.avgDuration")}
+                value={
+                  ingestion?.avg_sync_duration_seconds != null
+                    ? t("syncHealth.seconds", {
+                        value: formatNumber(
+                          Math.round(ingestion.avg_sync_duration_seconds),
+                        ),
+                      })
+                    : "—"
+                }
+              />
+              <Metric
+                label={t("syncHealth.failedBatches")}
+                value={formatNumber(ingestion?.failed_batches_count)}
+                trend={(ingestion?.failed_batches_count ?? 0) > 0 ? "negative" : undefined}
               />
             </div>
             <div className="rounded-xl border border-ink-100 bg-ink-50/50 px-4 py-3 dark:border-ink-800 dark:bg-ink-900/40">
@@ -451,6 +498,110 @@ function Metric({
         {value}
       </p>
     </div>
+  );
+}
+
+function healthTone(label?: string | null) {
+  switch ((label || "").toLowerCase()) {
+    case "healthy":
+      return "success" as const;
+    case "warning":
+      return "warning" as const;
+    case "error":
+      return "danger" as const;
+    default:
+      return "neutral" as const;
+  }
+}
+
+function TokenUsageCard({
+  usage,
+  loading,
+}: {
+  usage?: import("@/types").TokenUsage;
+  loading: boolean;
+}) {
+  const { t } = useTranslation(["dashboard", "common"]);
+
+  const pct = usage?.usage_percentage ?? null;
+  const clampedPct = pct === null ? 0 : Math.min(100, Math.max(0, pct));
+  const barTone =
+    clampedPct >= 90
+      ? "bg-rose-500"
+      : clampedPct >= 75
+        ? "bg-amber-500"
+        : "bg-brand-500";
+
+  return (
+    <Card>
+      <CardHeader
+        title={t("tokenUsage.title")}
+        description={t("tokenUsage.description")}
+        icon={<Gauge className="h-4 w-4" />}
+        actions={
+          usage?.subscription_status ? (
+            <Badge
+              tone={
+                usage.subscription_status.toLowerCase() === "active"
+                  ? "success"
+                  : "neutral"
+              }
+              dot
+            >
+              {usage.subscription_status}
+            </Badge>
+          ) : null
+        }
+      />
+      <div className="space-y-4 p-6">
+        {loading ? (
+          <Skeleton className="h-24 w-full" />
+        ) : !usage || usage.allowed_tokens_per_month == null ? (
+          <EmptyState
+            icon={<Coins className="h-5 w-5" />}
+            title={t("tokenUsage.empty.title")}
+            description={t("tokenUsage.empty.description")}
+          />
+        ) : (
+          <>
+            <div className="flex items-end justify-between gap-4">
+              <div>
+                <p className="text-2xl font-semibold tracking-tight text-ink-900 dark:text-ink-50">
+                  {formatPercent(pct)}
+                </p>
+                <p className="mt-0.5 text-xs text-ink-500 dark:text-ink-400">
+                  {t("tokenUsage.consumedOfQuota", {
+                    used: formatCompact(usage.tokens_used),
+                    allowed: formatCompact(usage.allowed_tokens_per_month),
+                  })}
+                </p>
+              </div>
+              <div className="text-right">
+                <p className="text-sm font-medium text-ink-900 dark:text-ink-50">
+                  {formatNumber(usage.tokens_remaining)}
+                </p>
+                <p className="text-[11px] uppercase tracking-wider text-ink-400">
+                  {t("tokenUsage.remaining")}
+                </p>
+              </div>
+            </div>
+            <div className="h-2.5 w-full overflow-hidden rounded-full bg-ink-100 dark:bg-ink-800">
+              <div
+                className={`h-full rounded-full transition-all ${barTone}`}
+                style={{ width: `${clampedPct}%` }}
+              />
+            </div>
+            {usage.last_token_reset_at && (
+              <p className="text-xs text-ink-500 dark:text-ink-400">
+                {t("tokenUsage.lastReset", {
+                  when: formatDateTime(usage.last_token_reset_at),
+                })}
+              </p>
+            )}
+          </>
+        )}
+      </div>
+    </Card>
   );
 }
 
