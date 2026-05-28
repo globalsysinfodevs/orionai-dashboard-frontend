@@ -69,13 +69,16 @@
     "lastSync": "Última sincronización",
     "viewPipeline": "Ver detalles de la canalización"
   },
-  "recentActivity": {
-    "title": "Actividad reciente",
-    "description": "Últimos eventos recibidos del agente de sincronización de este cliente.",
-    "batch": "lote",
+  "recentUsers": {
+    "title": "Usuarios activos (últimos 5 días)",
+    "description": "Usuarios que usaron los asistentes en los últimos 5 días.",
+    "unknownUser": "Usuario desconocido",
+    "lastActive": "Activo {{when}}",
+    "questions_one": "{{count}} pregunta",
+    "questions_other": "{{count}} preguntas",
     "empty": {
-      "title": "Aún no hay actividad",
-      "description": "Los eventos de ingesta recientes aparecerán aquí a medida que los agentes de sincronización reporten."
+      "title": "Sin usuarios activos",
+      "description": "Ningún usuario usó los asistentes en los últimos 5 días."
     }
   },
   "syncStatus": {

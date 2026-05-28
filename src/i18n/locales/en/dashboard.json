@@ -69,13 +69,16 @@
     "lastSync": "Last sync",
     "viewPipeline": "View pipeline details"
   },
-  "recentActivity": {
-    "title": "Recent activity",
-    "description": "Latest events received from this tenant's sync agent.",
-    "batch": "batch",
+  "recentUsers": {
+    "title": "Active users (last 5 days)",
+    "description": "Users who used the assistants in the last 5 days.",
+    "unknownUser": "Unknown user",
+    "lastActive": "Active {{when}}",
+    "questions_one": "{{count}} question",
+    "questions_other": "{{count}} questions",
     "empty": {
-      "title": "No activity yet",
-      "description": "Recent ingestion events will appear here as sync agents report in."
+      "title": "No active users",
+      "description": "No users have used the assistants in the last 5 days."
     }
   },
   "syncStatus": {
