@@ -168,9 +168,9 @@ export function DashboardOverviewPage() {
         />
         <StatCard
           label={t("kpi.tokens.label")}
-          value={formatCompact(overview.data?.total_tokens)}
+          value={formatCompact(tokenUsage?.tokens_used)}
           helper={t("kpi.tokens.helper")}
-          loading={overview.isLoading}
+          loading={kpi.isLoading}
           icon={<Coins className="h-5 w-5" />}
           accent="amber"
         />
