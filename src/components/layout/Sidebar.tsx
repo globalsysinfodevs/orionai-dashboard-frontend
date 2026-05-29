@@ -15,7 +15,7 @@ import { useTenants } from "@/contexts/TenantContext";
 
 const navItems = [
   { to: "/dashboard", labelKey: "nav.overview", icon: LayoutDashboard, end: true },
-  { to: "/analytics", labelKey: "nav.analytics", icon: Sparkles, end: false },
+   // { to: "/analytics", labelKey: "nav.analytics", icon: Sparkles, end: false },
   { to: "/users", labelKey: "nav.users", icon: Users, end: false },
   // { to: "/conversations", labelKey: "nav.conversations", icon: MessagesSquare, end: false },
   // { to: "/activity", labelKey: "nav.activity", icon: Activity, end: false },
