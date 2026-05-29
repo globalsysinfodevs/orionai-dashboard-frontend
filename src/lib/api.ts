@@ -313,6 +313,7 @@ export const dashboardApi = {
     page_size?: number;
     search?: string;
     status?: string;
+    last_active_days?: number;
   }): Promise<Paginated<UserListItem>> => {
     const res = await apiClient.get<ApiPaginatedResponse<UserListItem>>(
       `/dashboard/users`,

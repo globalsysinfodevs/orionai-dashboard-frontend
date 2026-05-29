@@ -11,6 +11,15 @@
     "active": "Activo",
     "inactive": "Inactivo"
   },
+  "daysFilter": {
+    "label": "Activo en",
+    "all": "Todos",
+    "7": "7d",
+    "14": "14d",
+    "30": "30d",
+    "90": "90d"
+  },
+  "activeWindowHint": "Las preguntas y los documentos se cuentan dentro de los últimos {{count}} días.",
   "table": {
     "title": "Directorio de usuarios",
     "user": "Usuario",

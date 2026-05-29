@@ -27,6 +27,8 @@ import { formatNumber, formatRelative, formatDateTime } from "@/lib/format";
 
 const PAGE_SIZE = 20;
 const STATUS_OPTIONS = ["all", "active", "inactive"] as const;
+// "all" => no window filter; numeric values map to the `last_active_days` query param.
+const DAYS_OPTIONS = ["all", "7", "14", "30", "90"] as const;
 
 export function UsersPage() {
   const { t } = useTranslation(["users", "common"]);
@@ -38,6 +40,10 @@ export function UsersPage() {
   const [searchInput, setSearchInput] = useState("");
   const [search, setSearch] = useState("");
   const [status, setStatus] = useState<(typeof STATUS_OPTIONS)[number]>("all");
+  const [days, setDays] = useState<(typeof DAYS_OPTIONS)[number]>("all");
+
+  // Resolve the active-window filter to the numeric `last_active_days` param.
+  const lastActiveDays = days === "all" ? undefined : Number(days);
 
   // Debounce the search box so we don't fire a request per keystroke.
   useEffect(() => {
@@ -48,10 +54,10 @@ export function UsersPage() {
   // Any filter change resets to the first page.
   useEffect(() => {
     setPage(1);
-  }, [search, status, tenantId]);
+  }, [search, status, days, tenantId]);
 
   const usersQuery = useQuery({
-    queryKey: ["dashboard-users", tenantId, page, search, status],
+    queryKey: ["dashboard-users", tenantId, page, search, status, days],
     queryFn: () =>
       dashboardApi.users({
         tenant_id: tenantId!,
@@ -59,6 +65,7 @@ export function UsersPage() {
         page_size: PAGE_SIZE,
         search: search || undefined,
         status: status === "all" ? undefined : status,
+        last_active_days: lastActiveDays,
       }),
     enabled: !!tenantId,
     placeholderData: keepPreviousData,
@@ -69,8 +76,12 @@ export function UsersPage() {
 
   const headerSummary = useMemo(() => {
     const total = usersQuery.data?.pagination.total;
-    return total === undefined ? "—" : t("summary", { count: total });
-  }, [usersQuery.data, t]);
+    const summary = total === undefined ? "—" : t("summary", { count: total });
+    if (lastActiveDays === undefined) return summary;
+    return `${summary} · ${t("activeWindowHint", { count: lastActiveDays })}`;
+  }, [usersQuery.data, t, lastActiveDays]);
+
+  const hasActiveFilters = !!search || status !== "all" || days !== "all";
 
   return (
     <div className="space-y-6">
@@ -117,6 +128,27 @@ export function UsersPage() {
                   </option>
                 ))}
               </select>
+              <div
+                className="inline-flex rounded-lg border border-ink-200 bg-white p-1 dark:border-ink-700 dark:bg-ink-900"
+                role="group"
+                aria-label={t("daysFilter.label")}
+              >
+                {DAYS_OPTIONS.map((d) => (
+                  <button
+                    key={d}
+                    type="button"
+                    onClick={() => setDays(d)}
+                    aria-pressed={days === d}
+                    className={`rounded-md px-3 py-1.5 text-xs font-medium transition ${
+                      days === d
+                        ? "bg-brand-600 text-white shadow-sm"
+                        : "text-ink-600 hover:bg-ink-100 dark:text-ink-300 dark:hover:bg-ink-800"
+                    }`}
+                  >
+                    {t(`daysFilter.${d}`)}
+                  </button>
+                ))}
+              </div>
             </div>
           }
         />
@@ -131,12 +163,12 @@ export function UsersPage() {
           <EmptyState
             icon={<UsersIcon className="h-5 w-5" />}
             title={
-              search || status !== "all"
+              hasActiveFilters
                 ? t("empty.filtered.title")
                 : t("empty.none.title")
             }
             description={
-              search || status !== "all"
+              hasActiveFilters
                 ? t("empty.filtered.description")
                 : t("empty.none.description")
             }

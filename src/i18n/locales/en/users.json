@@ -11,6 +11,15 @@
     "active": "Active",
     "inactive": "Inactive"
   },
+  "daysFilter": {
+    "label": "Active within",
+    "all": "All",
+    "7": "7d",
+    "14": "14d",
+    "30": "30d",
+    "90": "90d"
+  },
+  "activeWindowHint": "Questions and documents are counted within the last {{count}} days.",
   "table": {
     "title": "User directory",
     "user": "User",
