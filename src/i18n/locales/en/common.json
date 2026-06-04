@@ -21,6 +21,7 @@
     "active": "Active",
     "disabled": "Disabled",
     "revoked": "Revoked",
+    "expired": "Expired",
     "never": "Never",
     "none": "None",
     "unknown": "Unknown",

@@ -100,6 +100,7 @@ export interface ApiKeyInfo {
   key_prefix: string;
   label: string;
   is_active: boolean;
+  is_expired: boolean;
   last_used_at: string | null;
   expires_at: string | null;
   created_at: string;

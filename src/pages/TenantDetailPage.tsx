@@ -287,9 +287,19 @@ export function TenantDetailPage() {
                       <td className="font-medium">{k.label}</td>
                       <td className="font-mono text-xs">{k.key_prefix}</td>
                       <td>
-                        <Badge tone={k.is_active ? "success" : "neutral"} dot>
-                          {k.is_active ? t("common:status.active") : t("common:status.revoked")}
-                        </Badge>
+                        {!k.is_active ? (
+                          <Badge tone="neutral" dot>
+                            {t("common:status.revoked")}
+                          </Badge>
+                        ) : k.is_expired ? (
+                          <Badge tone="warning" dot>
+                            {t("common:status.expired")}
+                          </Badge>
+                        ) : (
+                          <Badge tone="success" dot>
+                            {t("common:status.active")}
+                          </Badge>
+                        )}
                       </td>
                       <td>{k.last_used_at ? formatRelative(k.last_used_at) : t("common:status.never")}</td>
                       <td>{k.expires_at ? formatDate(k.expires_at) : t("common:status.never")}</td>
