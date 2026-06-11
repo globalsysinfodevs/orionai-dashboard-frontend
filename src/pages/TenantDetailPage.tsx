@@ -157,7 +157,8 @@ export function TenantDetailPage() {
               >
                 {t("common:actions.edit")}
               </Button>
-              <Button
+              {/* Disable/Enable button hidden per client request — re-enable by uncommenting */}
+              {/* <Button
                 variant={active ? "outline" : "primary"}
                 leftIcon={
                   active ? <PowerOff className="h-4 w-4" /> : <Power className="h-4 w-4" />
@@ -166,7 +167,7 @@ export function TenantDetailPage() {
                 loading={updateMutation.isPending}
               >
                 {active ? t("disable") : t("enable")}
-              </Button>
+              </Button> */}
             </>
           }
         />
@@ -194,11 +195,12 @@ export function TenantDetailPage() {
         onChange={setTab}
         tabs={[
           { id: "overview", label: t("tabs.overview") },
-          {
+          /* API Keys tab hidden per client request — re-enable by uncommenting */
+          /* {
             id: "keys",
             label: t("tabs.apiKeys"),
             badge: <Badge tone="neutral">{apiKeys.length}</Badge>,
-          },
+          }, */
         ]}
       />
 
